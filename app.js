@@ -3,12 +3,16 @@ new Vue({
     data() {
         return {
             goals: [],
+            title: 'DEFAULT Titles',
             enteredValue: ''
         };
     },
     methods: {
-        addGoal() {
+        addGoal: function() {
             this.goals.push(this.enteredValue);
+        },
+        changeTitle: function(event) {
+            this.title = event.target.value;
         }
     }
   });
