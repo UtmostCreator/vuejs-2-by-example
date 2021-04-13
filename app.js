@@ -4,6 +4,7 @@ new Vue({
         return {
             goals: [],
             title: 'DEFAULT Titles',
+            link: 'https://google.com',
             enteredValue: ''
         };
     },

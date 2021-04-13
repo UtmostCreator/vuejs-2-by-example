@@ -10,9 +10,10 @@
 
 <body>
     <div id="app">
-        <h1>{{ title }}</h1>
-        <input type="text" v-on:input="changeTitle"/>
-        <p>{{ sayHello() }}</p>
+        <h1 v-once>{{ title }}</h1>
+        <span>The title will be dispalyed only once (you will not be able to change it) because of <mark>v-once</mark> directive</span>
+        <input type="text" v-on:input="changeTitle" />
+        <p>{{ sayHello() }} to <a :href="link">Google</a> or <a v-bind:href="sayHello()">Google</a></p>
         <div>
             <label for="goal">Goal</label>
             <input type="text" id="goal" v-model="enteredValue" @keyup.enter="addGoal" />
