@@ -5,7 +5,8 @@ new Vue({
             goals: [],
             title: 'DEFAULT Titles',
             link: 'https://google.com',
-            enteredValue: ''
+            enteredValue: '',
+            htmlLinkTag: '<a href="https://google.com"> html Link to google from comp</a>'
         };
     },
     methods: {
