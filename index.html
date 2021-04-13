@@ -10,23 +10,11 @@
 
 <body>
     <div id="app">
-        <img :src="imgUrl" alt="">
-        <p>Your info: {{ getUserNameAndAge() }}; Age multiplied by 3: {{ age * 3 }}</p>
-        <p><button @click="generateRandomNumber()">Gen Rnd Number</button> Random number from 0 to {{ rndTopLimit - 1 }}
-            ( {{ rndNumber }} )</p>
-        <h4>Your name (Two-way binding)</h4>
-        <input type="text" v-model.trim="name">
-        <h4>Your name (Two-way binding) .lazy</h4>
-        <input type="text" v-model.lazy="name">
-        <h4>Your name (One-way binding)</h4>
-        <input type="text" v-bind:value="name">
-        <h4>Your Age</h4>
-        <input type="number" v-model.number="age">
-        <h4>Hover over a text below to get coords: {{ coords.x }} / {{ coords.y }}</h4>
-        <p @mousemove="trackCoords">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel impedit earum repudiandae?
-            <span @mousemove.stop.prevent=""><b>STOP PROGPOGATION!</b></span>
-        </p>
+
+        <span>Change value on return (enter key): {{ enterValue }}</span>
+        <input type="text" v-on:keydown.enter="enterPressed">
+        <span>Change value on keyup: {{ keyupValue }}</span>
+        <input type="text" v-on:keyup="keyup">
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
