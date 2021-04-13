@@ -9,7 +9,20 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <img :src="imgUrl" alt="">
+        <p>Your info: {{ getUserNameAndAge() }}; Age multiplied by 3: {{ age * 3 }}</p>
+        <p><button @click="generateRandomNumber()">Gen Rnd Number</button> Random number from 0 to {{ rndTopLimit - 1 }} ( {{ rndNumber }} )</p>
+        <h4>Your name (Two-way binding)</h4>
+        <input type="text" v-model.trim="name">
+        <h4>Your name (Two-way binding) .lazy</h4>
+        <input type="text" v-model.lazy="name">
+        <h4>Your name (One-way binding)</h4>
+        <input type="text" v-bind:value="name">
+        <h4>Your Age</h4>
+        <input type="number" v-model.number="age">
+
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="app.js"></script>
 </body>
