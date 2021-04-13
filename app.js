@@ -3,7 +3,8 @@ new Vue({
     data() {
         return {
             enterValue: '',
-            keyupValue: ''
+            keyupValue: '',
+            changeValueFromView: ''
         }
     },
     methods: {

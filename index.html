@@ -15,6 +15,8 @@
         <input type="text" v-on:keydown.enter="enterPressed">
         <span>Change value on keyup: {{ keyupValue }}</span>
         <input type="text" v-on:keyup="keyup">
+        <span>Change value on keyup: {{ changeValueFromView }}</span>
+        <input type="text" v-on:keyup="changeValueFromView = $event.target.value">
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
