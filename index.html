@@ -18,6 +18,9 @@
         <span>Change value on keyup: {{ changeValueFromView }}</span>
         <input type="text" v-on:keyup="changeValueFromView = $event.target.value">
 
+        <input type="text" v-model.number="step">
+        <button @click="increase">increase counter by {{ step }}; Total Count: {{ totalCount }} </button>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="app.js"></script>

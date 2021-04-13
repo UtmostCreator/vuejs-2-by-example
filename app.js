@@ -2,6 +2,8 @@ new Vue({
     el: "#app",
     data() {
         return {
+            totalCount: 0,
+            step: 2,
             enterValue: '',
             keyupValue: '',
             changeValueFromView: ''
@@ -13,6 +15,9 @@ new Vue({
         },
         enterPressed: function(event) {
             this.enterValue = event.target.value;
+        },
+        increase: function() {
+            this.totalCount += this.step;
         }
     }
   });
