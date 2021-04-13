@@ -4,6 +4,7 @@ new Vue({
         return {
             totalCount: 0,
             step: 2,
+            maxValue: 10,
             enterValue: '',
             keyupValue: '',
             changeValueFromView: ''

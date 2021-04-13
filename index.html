@@ -20,6 +20,7 @@
 
         <input type="text" v-model.number="step">
         <button @click="increase">increase counter by {{ step }}; Total Count: {{ totalCount }} </button>
+        <span>{{ totalCount > maxValue ? 'You have reached your goal of ' + maxValue : 'You are under your goal!' }}</span>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
