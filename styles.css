@@ -38,3 +38,9 @@ li {
   padding: 1rem;
   border: 1px solid #ccc;
 }
+
+#effect {
+    width: 20rem;
+    height: 20rem;
+    background-color: cadetblue;
+}
