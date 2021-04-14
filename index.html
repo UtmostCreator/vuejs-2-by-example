@@ -10,11 +10,15 @@
 
 <body>
     <div id="app">
-        <div class="demo"></div>
-        <div class="demo"></div>
-        <div class="demo"></div>
+        <p>Use :style="{'background-color': color}</p>
+        <p>Or camalCase :style="{backgroundColor: color}</p>
+
+        <div class="demo" :style="{backgroundColor: color}">text</div>
+        <div class="demo" :style="myStyle">text</div>
+        <div class="demo" :style="[myStyle, {backgroundColor: color, color: color, height: width + 'px'}]">text</div>
 
         <input type="text" v-model="color">
+        <input type="text" v-model="width">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
