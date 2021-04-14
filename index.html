@@ -12,7 +12,13 @@
         <button @click="startEffect">start Effect (change style)</button>
         <button @click="startEffectWithClasses">start Effect (change classes)</button>
         <button @click="stopInterval">Top interval</button>
-        <div id="effect" :style="bgStyleColor" :class="currClass"></div>
+        <div id="effect" :style="bgStyleColor" :class="currColorClass"></div>
+        <div class="box" :style="[bgStyleColor, {width: width + 'px'}, heightCP]" :class="[currColorClass, inputClass]"></div>
+        <div>Width prop: <input type="text" v-model="width"></div>
+        <div>inputClass prop (mb-2, mt-2): <input type="text" v-model="inputClass"></div>
+
+
+
 
     </div>
 

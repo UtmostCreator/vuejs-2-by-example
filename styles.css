@@ -43,6 +43,11 @@ div > div {
     background-color: #ccc;
 }
 
+.box {
+    min-width: 30px;
+    min-height: 30px;
+}
+
 #effect {
     width: 20rem;
     height: 20rem;
@@ -59,4 +64,12 @@ div > div {
 
 .green {
     background-color: green;
+}
+
+.mb-2 {
+    margin-bottom: 20px;
+}
+
+.mt-2 {
+    margin-top: 20px;
 }

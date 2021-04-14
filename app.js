@@ -2,14 +2,21 @@ new Vue({
     el: "#app",
     data() {
         return {
-            currClass: '',
+            currColorClass: '',
             color: '',
+            width: '',
             handle: null,
+            inputClass: '',
             bgArrStyleClasses: ['red', 'green', 'blue', 'steelblue', '#abd'],
             bgClasses: ['red', 'green', 'steelblue']
         };
     },
     computed: {
+        heightCP: function () {
+            return {
+                height: this.width + 'px'
+            }
+        },
         bgStyleColor: function () {
             return {
                 backgroundColor: this.color
@@ -36,8 +43,8 @@ new Vue({
         startEffectWithClasses: function () {
             let vm = this;
             this.handle = setInterval(function () {
-                vm.currClass = vm.bgClasses[vm.getRandomArbitrary(0, vm.bgClasses.length - 1)];
-                console.log(vm.currClass);
+                vm.currColorClass = vm.bgClasses[vm.getRandomArbitrary(0, vm.bgClasses.length - 1)];
+                console.log(vm.currColorClass);
             }, 2000);
         },
         stopInterval: function () {
