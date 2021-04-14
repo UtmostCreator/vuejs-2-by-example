@@ -10,7 +10,10 @@
 
 <body>
     <div id="app">
-        <button @click="counter++">Increase counter</button> {{ counter }}
+        <p>Current value: {{ counter }}</p>
+        <button @click="counter++">Increase counter by 1</button>
+        <button @click="counter += 5">Increase counter by 5</button>
+        <p>{{ result }}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
