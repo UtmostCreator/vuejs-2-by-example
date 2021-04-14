@@ -2,7 +2,8 @@ new Vue({
     el: "#app",
     data() {
         return {
-            attachRed: false
+            attachRed: false,
+            color: ''
         }
     },
     computed: {

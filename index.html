@@ -11,7 +11,10 @@
         <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
         not the best way:
         <div class="demo" :class="{blue: attachRed}"></div>
-        <div class="demo" :class="{red: attachRed}"></div>
+        <div class="demo" :class="[color, {red: attachRed}]"></div>
+
+        <p>Color class: <span class="green">green</span> | <span class="red">red</span> | <span class="blue">blue</span> </p>
+        <input type="text" v-model="color">
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
