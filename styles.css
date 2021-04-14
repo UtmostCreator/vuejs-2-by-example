@@ -73,3 +73,16 @@ div > div {
 .mt-2 {
     margin-top: 20px;
 }
+
+.progress-bar {
+    height: 2rem;
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.percentage {
+    background-color: green;
+    height: 95%;
+    width: 0;
+}

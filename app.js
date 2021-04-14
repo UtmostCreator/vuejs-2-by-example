@@ -1,5 +1,17 @@
 new Vue({
     el: "#app",
+    mounted: function() {
+        let vm = this;
+        console.log('mounted');
+        let handler = setInterval(function() {
+            console.log('interval', vm.percentage)
+            vm.percentage += vm.getRandomArbitrary(0,10);
+            if(vm.percentage >= 100) {
+                clearInterval(handler);
+                handler = null;
+            }
+        }, 300);
+    },
     data() {
         return {
             currColorClass: '',
@@ -7,11 +19,15 @@ new Vue({
             width: '',
             handle: null,
             inputClass: '',
+            percentage: 0,
             bgArrStyleClasses: ['red', 'green', 'blue', 'steelblue', '#abd'],
             bgClasses: ['red', 'green', 'steelblue']
         };
     },
     computed: {
+        percentageCP: function() {
+            return {width: this.percentage + '%'};
+        },
         heightCP: function () {
             return {
                 height: this.width + 'px'
