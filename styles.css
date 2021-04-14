@@ -39,8 +39,24 @@ li {
   border: 1px solid #ccc;
 }
 
+div > div {
+    background-color: #ccc;
+}
+
 #effect {
     width: 20rem;
     height: 20rem;
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
+}
+
+.red {
+    background-color: red;
+}
+
+.steelblue {
+    background-color: steelblue;
+}
+
+.green {
+    background-color: green;
 }

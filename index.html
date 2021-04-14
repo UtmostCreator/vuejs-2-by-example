@@ -9,8 +9,10 @@
   <body>
     <div id="app">
 
-        <button @click="startEffect">start Effect</button>
-        <div id="effect" :style="bgColor"></div>
+        <button @click="startEffect">start Effect (change style)</button>
+        <button @click="startEffectWithClasses">start Effect (change classes)</button>
+        <button @click="stopInterval">Top interval</button>
+        <div id="effect" :style="bgStyleColor" :class="currClass"></div>
 
     </div>
 
