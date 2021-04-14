@@ -9,6 +9,7 @@ new Vue({
     },
     // is used when you need some other code when the propeties updates, and when it is not solved by a computed property, then watch is for you
     watch: {
+        // this is a wrong usage as it will be recalculated each time you change a counter
         counter: function(value) {
             let vm = this;
 
