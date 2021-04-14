@@ -10,19 +10,35 @@
 
 <body>
     <div id="app">
+        <a href="https://stackoverflow.com/a/67083747/6901693">https://stackoverflow.com/a/67083747/6901693</a>
+        <h1>Computed Properties Guide</h1>
+        <p style="background-color: bisque;">
+            Let's assume that you have <span v-once>{{ cash }}</span>$;
+            And you need to pay a debt=<span v-once>{{ debt }}</span>
+        </p>
+        <p>Your bank account: {{ moneyInBank }}$ <button v-on:click="withdraw(value)">Withdrow {{ value }}$ from
+                bank</button></p>
+        <p>Your cash: {{ cash }}$</p>
+        <p>Your debt: {{ debt }}$ <button v-on:click="lendAmount(value)">Lend {{ value }}$ from Infinity</button></p>
+        <div class="grid">
+            <button v-on:click="repayADebt(value)">Repay a debt</button>
+            <span>in amout of</span>
+            <input type="text" v-model.number="value">
+            <span>$</span>
+        </div>
 
-        <span>Change value on return (enter key): {{ enterValue }}</span>
-        <input type="text" v-on:keydown.enter="enterPressed">
-        <span>Change value on keyup: {{ keyupValue }}</span>
-        <input type="text" v-on:keyup="keyup">
-        <span>Change value on keyup: {{ changeValueFromView }}</span>
-        <input type="text" v-on:keyup="changeValueFromView = $event.target.value">
+        <p>computedPropRemainingCashFundsIfPaid/<br><mark>Available funds in case of debt repayment</mark> = {{
+            computedPropRemainingCashFundsIfPaid }}$</p>
+        <p>computedPropRemainingTotalFunds = {{ computedPropRemainingTotalFunds }}$</p>
 
-        <input type="text" v-model.number="step">
-        <button @click="increase">increase counter by {{ step }}; Total Count: {{ totalCount }} </button>
-        <span>{{ totalCount > maxValue ? 'You have reached your goal of ' + maxValue : 'You are under your goal!' }}</span>
+        <p class="computed-property-desc">when you need to change data, you will use methods. And When you need to
+            change the presentation of existing data, you will use computed properties. As you practice both concepts,
+            it will become easier which one should you use. Very important notes: 1. it must always return a value; 2.
+            computed properties are only used for transforming data and not for chaning it for our presentation layer |
+            they should not alter or change the existing data</p>
 
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="app.js"></script>
 </body>

@@ -1,40 +1,65 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow-wrap: break-word;
 }
 
 html {
-  font-family: sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana;
+    font-size: 62.5%;
 }
 
 body {
-  margin: 0;
+    margin: 0;
+    font-size: 1.6rem;
 }
 
 #app {
-  margin: 3rem auto;
-  max-width: 40rem;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    margin: 3rem auto;
+    max-width: 50vw;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
-label, input {
-  margin-bottom: 0.5rem;
-  display: block;
-  width: 100%;
+label,
+input {
+    margin-bottom: 0.5rem;
+    display: block;
+    width: 100%;
 }
 
 label {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 ul {
-  list-style: none;
-  margin: 1rem 0;
-  padding: 0;
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
 }
 
 li {
-  margin: 1rem 0;
-  padding: 1rem;
-  border: 1px solid #ccc;
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+.grid {
+    display: grid;
+    grid: 1fr / 1fr min-content 1fr min-content;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.grid > :is(button, input) {
+    height: 3rem;
+    margin: 0;
+}
+
+.computed-property-desc {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: justify;
 }
