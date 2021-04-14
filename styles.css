@@ -38,3 +38,23 @@ li {
   padding: 1rem;
   border: 1px solid #ccc;
 }
+
+.demo {
+    width: 10rem;
+    height: 10rem;
+    display: inline-block;
+    margin: 1rem;
+    background-color: burlywood;
+}
+
+.red {
+     background-color: red;
+}
+
+.green {
+     background-color: green;
+}
+
+.blue {
+     background-color: blue;
+}
