@@ -26,7 +26,7 @@ new Vue({
     },
     computed: {
         percentageCP: function() {
-            return {width: this.percentage + '%'};
+            return {width: this.percentage + '%', backgroundColor: this.bgArrStyleClasses[this.getRandomArbitrary(0, this.bgArrStyleClasses.length - 1)]};
         },
         heightCP: function () {
             return {
