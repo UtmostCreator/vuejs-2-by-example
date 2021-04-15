@@ -8,7 +8,11 @@
   </head>
   <body>
     <div id="app">
-
+        <ul>
+            <li v-for="product in products">
+                 Name: {{ product.name }} | Q: {{ product.q }}
+            </li>
+        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
