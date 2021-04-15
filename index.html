@@ -13,6 +13,12 @@
                 {{ i+1 }}. Name: {{ product.name }} | Q: {{ product.q }}
             </li>
         </ul>
+
+        <template v-for="(product, i) in products">
+            <h3>Name: {{ product.name }}</h3>
+            <p>{{ i+1 }}</p>
+        </template>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
