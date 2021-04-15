@@ -13,7 +13,8 @@
         <a href="https://vuejs.org/v2/guide/conditional.html#Controlling-Reusable-Elements-with-key">
             https://vuejs.org/v2/guide/conditional.html#Controlling-Reusable-Elements-with-key
         </a>
-
+        BY default w/o :key="item.id"; the vue tracks only by a position number. with :key it tracks the element itself
+        key must be unique
 
         <ul>
             <li v-for="(item, i) in items">
