@@ -8,7 +8,19 @@
   </head>
   <body>
     <div id="app">
+        <button @click="admin = !admin">Admin/Guest</button>
+        <button @click="show = !show">Toggle(Hide/Show) 1st paragraph</button>
+        <p v-if="show">You can see it</p>
+        <p v-else-  if="admin">Visible only for admin</p>
+        <p v-else>Visible only for non-admin users</p>
 
+        <button @click="group = !group">Hide show group of elements</button>
+        <template v-if="group">
+            <div>
+                text temp
+            </div>
+            <p>But probabbly this one is hidden</p>
+        </template>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
