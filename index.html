@@ -19,7 +19,11 @@
 
         <div class="progress-bar"><div class="percentage" :style="percentageCP" :class="[{visible: true}]"></div></div>
 
-
+        <br>
+        <p>float(left, right): <input type="text" v-model="myStyle.float"></p>
+        <p>Color: <input type="text" v-model="myStyle.color"></p>
+        {{ myStyle }}
+        <div :style="myStyle" style="width: clamp(45ch, 50%, 75ch);">change my position from left to right or change a color of me</div>
 
 
     </div>

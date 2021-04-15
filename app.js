@@ -21,7 +21,11 @@ new Vue({
             inputClass: '',
             percentage: 0,
             bgArrStyleClasses: ['red', 'green', 'blue', 'steelblue', '#abd'],
-            bgClasses: ['red', 'green', 'steelblue']
+            bgClasses: ['red', 'green', 'steelblue'],
+            myStyle: {
+                color: '',
+                float: ''
+            }
         };
     },
     computed: {
