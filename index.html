@@ -9,8 +9,8 @@
   <body>
     <div id="app">
         <ul>
-            <li v-for="product in products">
-                 Name: {{ product.name }} | Q: {{ product.q }}
+            <li v-for="(product, i) in products">
+                {{ i+1 }}. Name: {{ product.name }} | Q: {{ product.q }}
             </li>
         </ul>
     </div>
