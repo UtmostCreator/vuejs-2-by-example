@@ -8,6 +8,13 @@
   </head>
   <body>
     <div id="app">
+
+        <h2>This url explains why you should use :key on each item it a loop</h2>
+        <a href="https://vuejs.org/v2/guide/conditional.html#Controlling-Reusable-Elements-with-key">
+            https://vuejs.org/v2/guide/conditional.html#Controlling-Reusable-Elements-with-key
+        </a>
+
+
         <ul>
             <li v-for="(item, i) in items">
                 {{ item }}; {{ i }}
@@ -19,9 +26,11 @@
             <p>{{ i+1 }}</p>
         </template>
 
+
+        <button @click="products.push({name: 'newDynamicItem', q: 10})">Add new item to products</button>
         <ul>
             <li v-for="(product, topIndex) in products">
-                <div v-for="(product, key, i) in product">
+                <div v-for="(product, key, i) in product" :key="product.id">
                     <p>Key: {{ key }}. Name: {{ product.name }} | Q: {{ product.q }}</p>
                     <i>Index of property: {{i}}</i><br>
                     <b>Top Index of property: {{topIndex}}</b>
@@ -32,7 +41,6 @@
         <ul>
             <li v-for="i in 3">{{i}}</li>
         </ul>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
