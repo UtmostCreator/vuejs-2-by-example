@@ -4,7 +4,8 @@ new Vue({
         return {
             show: true,
             admin: true,
-            group: true
+            group: true,
+            display: true
         };
     },
     methods: {

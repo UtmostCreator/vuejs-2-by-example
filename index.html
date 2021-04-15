@@ -21,6 +21,13 @@
             </div>
             <p>But probabbly this one is hidden</p>
         </template>
+        <button @click="display = !display">Display none</button>
+        <div v-show="display">
+            <div>
+                v-show
+            </div>
+            <p>2nd paragraph</p>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
