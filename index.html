@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A First App</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div id="app">
+</head>
 
+<body>
+    <div id="app">
+        <button @click="show = !show">Hide/show 2 divs with v-if and v-show</button>
+        <div v-if="show">div 1</div>
+        <div v-show="!show">div 2________</div>
+
+        <template v-if="books && books.length">
+            <ul>
+                <li v-for="(book, i) in books" :key="book.title">
+                    {{i+1}}.
+                    <b>Title: {{ book.title }};</b>
+                    <p>Author: {{ book.author }}<b>Title: {{ book.published }};</b></p>
+                </li>
+            </ul>
+        </template>
+
+        <template v-if="experiment && experiment.length">
+            <ul>
+                <li v-for="exp in experiment">
+                    <h3>{{exp.name}} <i>{{ exp.hasOwnProperty('data') ? 'has hasOwnProperty data' : 'no' }}</i></h3>
+                    <ul v-if="exp.hasOwnProperty('data')">
+                        <li v-for="item in exp.data"> {{ item }}</li>
+                    </ul>
+                </li>
+            </ul>
+        </template>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
