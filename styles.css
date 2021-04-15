@@ -85,4 +85,5 @@ div > div {
     background-color: green;
     height: 95%;
     width: 0;
+    transition: width 300ms ease-in, background-color 400ms ease-in-out;
 }
