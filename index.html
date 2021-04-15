@@ -12,6 +12,7 @@
     <div id="app">
         <button @click="show = !show">Hide/show 2 divs with v-if and v-show</button>
         <div v-if="show">div 1</div>
+        <div v-else>div 1 else</div>
         <div v-show="!show">div 2________</div>
 
         <template v-if="books && books.length">
