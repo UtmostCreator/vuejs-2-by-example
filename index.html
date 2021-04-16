@@ -1,17 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A First App</title>
+    <link rel="stylesheet" href="foundation.min.css" />
+    <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div id="app">
+</head>
 
+<body>
+    <div id="app">
+        <section class="row">
+            <div class="small-6 columns">
+                <h1 class="text-center">YOU</h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;"
+                        :style="pHP">
+
+                    </div>
+                </div>
+            </div>
+            <div class="small-6 columns">
+                <h1 class="text-center">MONSTER</h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;"
+                        :style="eHP">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row controls" v-if="!gameState.started">
+            <div class="small-12 columns">
+                <button id="start-game" @click="startGame">START NEW GAME</button>
+            </div>
+        </section>
+        <section class="row controls" v-if="gameState.started">
+            <div class="small-12 columns">
+                <template v-if="!gameState.paused">
+                    <button id="attack" @click="playerAttack" :disabled="!canInteract">ATTACK</button>
+                    <button id="special-attack" @click="useSkill" :disabled="!canInteract">SPECIAL ATTACK</button>
+                    <button id="heal" @click="playerHeal" >HEAL</button>
+                </template>
+                <button id="give-up" @click="endGame" v-if="!player.alive()">GIVE UP</button>
+                <button id="give-up" @click="endGame" v-else>Go To Main Menu</button>
+            </div>
+        </section>
+        <section class="row log">
+            <div class="small-12 columns">
+                <ul>
+                    <li v-for="(item, key) in displayedLog" :key="key"
+                        :class="item.type === 'player' ? 'player-turn' : 'monster-turn'">
+                        {{ item.text }}
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
