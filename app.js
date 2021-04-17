@@ -1,9 +1,7 @@
 new Vue({
     el: "#app",
-    data() {
-        return {
-
-        };
+    data: {
+        title: 'Title'
     },
     methods: {
     }
