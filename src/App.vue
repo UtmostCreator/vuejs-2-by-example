@@ -1,6 +1,25 @@
 <template>
     <div>
-        Empty
+        <div class="heading">
+            <h2>Server status</h2>
+        </div>
+        <hr>
+        <div class="servers" style="display: grid; grid: 1fr / 1fr 1fr">
+            <ul class="server-details" style="display:flex; flex-flow:column; background: #2c3e50; color:white;">
+                <li>lorem10</li>
+                <li>lorem10</li>
+                <li>lorem10</li>
+                <li>lorem10</li>
+                <li>lorem10</li>
+            </ul>
+            <div class="server-info" style="background: #cccccc;">
+                Server info
+            </div>
+        </div>
+        <hr>
+        <div class="server-management">
+            Server management goes here
+        </div>
     </div>
 </template>
 
