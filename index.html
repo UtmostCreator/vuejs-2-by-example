@@ -18,6 +18,16 @@
       <button @click="changeVM1Title">change vm1's title</button>
     </div>
 
+    <br>
+
+    <div id="app3">
+    </div>
+    <!-- only 1st occurrence will be replaced with vue instance -->
+    <div class="world">
+        <component-a></component-a>
+    </div>
+    <div class="world"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="app.js"></script>
   </body>
