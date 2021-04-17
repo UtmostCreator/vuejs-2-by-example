@@ -7,8 +7,15 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="app">
-
+    <div id="app1" style="background-color: bisque;">
+      <h4 ref="vHeading">{{title}}</h4>
+      <button @click="showP" ref="vBtn">Show hide paragraph</button>
+      <p v-if="pVisible">This is not always visible</p>
+    </div>
+    <br>
+    <div id="app2" style="background-color: cornflowerblue;">
+      {{title}}
+      <button @click="changeVM1Title">change vm1's title</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
