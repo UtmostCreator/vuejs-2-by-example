@@ -1,10 +1,14 @@
 <template>
     <div>
-        <app-server-status></app-server-status>
+        <app-servers></app-servers>
     </div>
 </template>
 
+
 <script>
+// App.vue contains a container for servers
+// Home.vue outputs all servers
+// ServerStatus is a single server
 export default {
 }
 </script>
