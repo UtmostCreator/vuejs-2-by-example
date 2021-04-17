@@ -2,10 +2,10 @@
 //     status: 'status NNN'
 // };
 
-Vue.component('my-cmp', {
+let myCmp = {
     data: function () {
         return {
-            status: 'status NNN'
+            status: 'status using instance components property'
         }; // will be the same for each component if used this way
     },
     template: '<p>test paragraph {{status}} <button @click="changeStatus">Change Status</button></p>',
@@ -14,7 +14,7 @@ Vue.component('my-cmp', {
             this.status = 'Normal';
         }
     }
-});
+};
 
 new Vue({
     el: "#app",
@@ -22,5 +22,8 @@ new Vue({
         status: 'Status'
     },
     methods: {
+    },
+    components: {
+        'my-cmp': myCmp,
     }
 });
