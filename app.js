@@ -52,7 +52,7 @@ let vm3 = new Vue({
 // only 1st occurrence will be replaced with vue instance.
 let vm4 = new Vue({
     el: '.world',
-    template: "<p>Hello!</p>",
+    template: "<p>Hello!</p>", // supports only 1 line
     components: {
         'component-a': componentA,
     },
