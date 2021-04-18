@@ -12,7 +12,7 @@ update parent property
 v-on:update:userName="name = $event" or v-on:userName="name = $event"
 or shorthand like: :userName.sync="name"
 -->
-        <app-user-detail :user-name="name" :userName.sync="name"></app-user-detail>
+        <app-user-detail :user-name="name" :userName.sync="name" :resetFn="resetName"></app-user-detail>
         <app-user-edit></app-user-edit>
     </div>
 </template>
@@ -34,6 +34,10 @@ export default {
         },
         changename() {
             this.name = 'full lowercase';
+        },
+        // will be called from child
+        resetName() {
+            this.name = 'NAME is resetted form child';
         }
     },
     components: {
