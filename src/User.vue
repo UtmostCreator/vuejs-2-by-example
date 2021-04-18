@@ -3,7 +3,7 @@
         <h2>It is a user component</h2>
 
         <button @click="changeName">Change name</button>
-        <app-user-detail></app-user-detail>
+        <app-user-detail name="TestName"></app-user-detail>
         <app-user-edit></app-user-edit>
     </div>
 </template>
