@@ -3,6 +3,10 @@ import App from './App.vue'
 // const alias = require( 'aliasName' );
 
 export const eventBus = new Vue({
+    // can be accessed from any part of your application
+    data: {
+
+    },
     methods: {
         changeAge(age) {
             this.$emit('ageWasEdited', age);
