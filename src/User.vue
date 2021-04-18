@@ -13,7 +13,7 @@ v-on:update:userName="name = $event" or v-on:userName="name = $event"
 or shorthand like: :userName.sync="name"
 -->
         <app-user-detail :user-name="name" :userName.sync="name" :resetFn="resetName" :user-age="age"></app-user-detail>
-        <app-user-edit :user-age="age" @ageWasEdited="age = $event"></app-user-edit>
+        <app-user-edit :user-age="age" @ageWasEdited="age = $event" :editAgeParentFn="changeAge"></app-user-edit>
     </div>
 </template>
 
@@ -39,6 +39,9 @@ export default {
         // will be called from child
         resetName() {
             this.name = 'NAME is resetted form child';
+        },
+        changeAge() {
+            this.age = 99;
         }
     },
     components: {
