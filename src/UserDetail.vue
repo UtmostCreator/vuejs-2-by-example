@@ -16,7 +16,9 @@ export default {
     // Note that objects and arrays in JavaScript are passed by reference, so if the prop is an array or object,
     // mutating the object or array itself inside the child component will affect parent state.
     // in each string it should be a property settable from outside
-    props: ['userName'], // properties set from outside (e.g parent)
+    props: {
+        userName: String,
+    }, // properties set from outside (e.g parent)
     methods: {
         getReversedName() {
             return this.userName.split('').reverse().join('');
