@@ -17,7 +17,11 @@ export default {
     // mutating the object or array itself inside the child component will affect parent state.
     // in each string it should be a property settable from outside
     props: {
-        userName: String,
+        userName: {
+            type: String,
+            // required: true, // either required or default
+            default: 'test' // works if you remove // :user-name="name" from User.vue
+        },
     }, // properties set from outside (e.g parent)
     methods: {
         getReversedName() {
