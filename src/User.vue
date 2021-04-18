@@ -3,7 +3,8 @@
         <h2>It is a user component</h2>
 
         <button @click="changeName">Change name</button>
-        <app-user-detail :name="name"></app-user-detail>
+        Case sensitive (userName) will work in a single file.
+        <app-user-detail :userName="name"></app-user-detail>
         <app-user-edit></app-user-edit>
     </div>
 </template>
@@ -19,8 +20,12 @@ export default {
         }
     },
     methods: {
+        // these are 2 diff methods
         changeName() {
             this.name = 'Known name';
+        },
+        changename() {
+            this.name = 'full lowercase';
         }
     },
     components: {

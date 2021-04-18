@@ -2,7 +2,7 @@
     <div>
         <h3> User detail component</h3>
         <div>
-            <p>Name: {{ name }}</p>
+            <p>Name: {{ userName }}</p>
         </div>
 
     </div>
@@ -11,7 +11,7 @@
 <script>
 export default {
     // in each string it should be a property settable from outside
-    props: ['name'] // properties set from outside (e.g parent)
+    props: ['userName'] // properties set from outside (e.g parent)
 }
 </script>
 
