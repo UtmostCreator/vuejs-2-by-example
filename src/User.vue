@@ -7,7 +7,12 @@
         <p>Name is: {{ name }}</p>
         <!-- v-on:nameWasResetted="name = $event" or @nameWasResetted="name = $event"
                event is a data passed as a 2nd argument in $emit() -->
-        <app-user-detail :user-name="name" v-on:nameWasResetted="name = $event"></app-user-detail>
+<!--
+update parent property
+v-on:update:userName="name = $event" or v-on:userName="name = $event"
+or shorthand like: :userName.sync="name"
+-->
+        <app-user-detail :user-name="name" :userName.sync="name"></app-user-detail>
         <app-user-edit></app-user-edit>
     </div>
 </template>

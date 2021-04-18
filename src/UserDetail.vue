@@ -27,9 +27,6 @@ export default {
             // default: 'TestString', // works if you remove // :user-name="name" from User.vue
         },
     }, // properties set from outside (e.g parent)
-    // computed: {
-    //
-    // },
     methods: {
         getReversedName() {
             return this.userName.split('').reverse().join('');
@@ -42,8 +39,9 @@ export default {
             // emit custom event;
             // each vue instance you got access to $emit() method which vuejs gives us
             // components are only extends a vue instance, the are kind of instance of vue.
-            this.$emit('nameWasResetted', this.userName);
+
             // this.$emit('eventName');
+            this.$emit('update:userName', this.userName);
         }
     }
 }
