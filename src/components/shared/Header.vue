@@ -16,5 +16,8 @@ export default {
 </script>
 
 <style scoped>
+div {
+    border: 3px solid lightsteelblue;
+}
 
 </style>

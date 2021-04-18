@@ -1,5 +1,5 @@
 <template>
-    <div class="server-management">
+    <div>
         {{title}}
     </div>
 </template>
@@ -16,5 +16,7 @@ export default {
 </script>
 
 <style scoped>
-
+    div {
+        border: 3px solid yellowgreen;
+    }
 </style>
