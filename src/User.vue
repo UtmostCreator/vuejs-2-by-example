@@ -5,6 +5,7 @@
         <button @click="changeName">Change name</button>
         Case sensitive (userName) will work in a single file.
         <p>Name is: {{ name }}</p>
+        <p>Age is: {{ age }}</p>
         <!-- v-on:nameWasResetted="name = $event" or @nameWasResetted="name = $event"
                event is a data passed as a 2nd argument in $emit() -->
 <!--

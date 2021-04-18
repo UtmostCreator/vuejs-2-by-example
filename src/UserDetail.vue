@@ -14,6 +14,8 @@
 <script>
 //Note that props are validated before a component instance is created,
 // so instance properties (e.g. data, computed, etc) will not be available inside default or validator functions.
+import {eventBus} from "./main";
+
 export default {
     // Note that objects and arrays in JavaScript are passed by reference, so if the prop is an array or object,
     // mutating the object or array itself inside the child component will affect parent state.
@@ -46,6 +48,11 @@ export default {
             // this.$emit('eventName');
             this.$emit('update:userName', this.userName);
         }
+    },
+    created() {
+        eventBus.$on('ageWasEdited', (age) => {
+            this.userAge = age;
+        });
     }
 }
 </script>
