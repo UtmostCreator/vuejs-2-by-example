@@ -12,8 +12,8 @@ update parent property
 v-on:update:userName="name = $event" or v-on:userName="name = $event"
 or shorthand like: :userName.sync="name"
 -->
-        <app-user-detail :user-name="name" :userName.sync="name" :resetFn="resetName"></app-user-detail>
-        <app-user-edit></app-user-edit>
+        <app-user-detail :user-name="name" :userName.sync="name" :resetFn="resetName" :user-age="age"></app-user-detail>
+        <app-user-edit :user-age="age" @ageWasEdited="age = $event"></app-user-edit>
     </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
     data: function () {
         return {
             name: 'Unknown Name',
+            age: 11
         }
     },
     methods: {

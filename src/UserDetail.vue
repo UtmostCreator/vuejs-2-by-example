@@ -4,10 +4,10 @@
         <div>
             <p>Name: {{ userName }}</p>
             <p>Reversed Name: {{ getReversedName() }}</p>
+            <p>User Age: {{ userAge }}</p>
         </div>
         <button @click="resetName">Reset name</button>
         <button @click="resetFn">Reset using parent function</button>
-
     </div>
 </template>
 
@@ -28,6 +28,7 @@ export default {
             // default: 'TestString', // works if you remove // :user-name="name" from User.vue
         },
         resetFn: Function,
+        userAge: Number,
     }, // properties set from outside (e.g parent)
     methods: {
         getReversedName() {
