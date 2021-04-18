@@ -4,7 +4,7 @@
 
         <button @click="changeName">Change name</button>
         Case sensitive (userName) will work in a single file.
-        <app-user-detail :userName="name"></app-user-detail>
+        <app-user-detail :user-name="name"></app-user-detail>
         <app-user-edit></app-user-edit>
     </div>
 </template>
