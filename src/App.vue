@@ -1,11 +1,15 @@
 <template>
     <div>
-        <app-server-status></app-server-status>
+        <app-user></app-user>
     </div>
 </template>
 
 <script>
+import User from './User'
 export default {
+    components: {
+        'app-user': User,
+    }
 }
 </script>
 
