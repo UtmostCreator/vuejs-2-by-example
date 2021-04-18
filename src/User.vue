@@ -4,7 +4,10 @@
 
         <button @click="changeName">Change name</button>
         Case sensitive (userName) will work in a single file.
-        <app-user-detail :user-name="name"></app-user-detail>
+        <p>Name is: {{ name }}</p>
+        <!-- v-on:nameWasResetted="name = $event" or @nameWasResetted="name = $event"
+               event is a data passed as a 2nd argument in $emit() -->
+        <app-user-detail :user-name="name" v-on:nameWasResetted="name = $event"></app-user-detail>
         <app-user-edit></app-user-edit>
     </div>
 </template>
@@ -14,7 +17,7 @@ import UserEdit from './UserEdit'
 import UserDetail from './UserDetail'
 
 export default {
-    data: function() {
+    data: function () {
         return {
             name: 'Unknown Name',
         }
@@ -36,7 +39,7 @@ export default {
 </script>
 
 <style scoped>
-    div.user-comp {
-        border: 3px solid hsl(248, 53%, 58%);
-    }
+div.user-comp {
+    border: 3px solid hsl(248, 53%, 58%);
+}
 </style>

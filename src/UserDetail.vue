@@ -5,6 +5,7 @@
             <p>Name: {{ userName }}</p>
             <p>Reversed Name: {{ getReversedName() }}</p>
         </div>
+        <button @click="resetName">Reset name</button>
 
     </div>
 </template>
@@ -26,9 +27,23 @@ export default {
             // default: 'TestString', // works if you remove // :user-name="name" from User.vue
         },
     }, // properties set from outside (e.g parent)
+    // computed: {
+    //
+    // },
     methods: {
         getReversedName() {
             return this.userName.split('').reverse().join('');
+        },
+        // trying to change parent vales
+        resetName() {
+            // reference types (Array, Function, Object) - can be changed this way;
+            // but primitive (number, String, boolean, null, undefined, symbol)
+            this.userName = 'resetted Name';
+            // emit custom event;
+            // each vue instance you got access to $emit() method which vuejs gives us
+            // components are only extends a vue instance, the are kind of instance of vue.
+            this.$emit('nameWasResetted', this.userName);
+            // this.$emit('eventName');
         }
     }
 }
