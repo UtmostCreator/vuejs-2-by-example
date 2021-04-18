@@ -2,7 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 // const alias = require( 'aliasName' );
 
-export const eventBus = new Vue(); // order is important!! MUST be created before main VUE instance!!!!
+export const eventBus = new Vue({
+    methods: {
+        changeAge(age) {
+            this.$emit('ageWasEdited', age);
+        }
+    }
+}); // order is important!! MUST be created before main VUE instance!!!!
 
 new Vue({
   el: '#app',
