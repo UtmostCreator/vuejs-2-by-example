@@ -20,7 +20,10 @@ export default {
         userName: {
             type: String,
             // required: true, // either required or default
-            default: 'test' // works if you remove // :user-name="name" from User.vue
+            // default: function () {
+            //     return {name: 'Name TEST'}
+            // }
+            // default: 'TestString', // works if you remove // :user-name="name" from User.vue
         },
     }, // properties set from outside (e.g parent)
     methods: {
