@@ -4,7 +4,7 @@
         <hr>
         <app-quote>
             <h2 slot="title">{{ quoteTitle }}</h2>
-            <q slot="content">Custom description</q>
+            <q>Custom description</q>
         </app-quote>
         <hr>
         <app-footer></app-footer>
