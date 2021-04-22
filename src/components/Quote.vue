@@ -1,0 +1,23 @@
+<template>
+    <div>
+        <q>{{ customText }}</q>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "Quote",
+    props: {
+        customText: String,
+    }
+}
+</script>
+
+<style scoped>
+    div {
+        border: 1px solid #cccccc;
+        box-shadow: 1px 2px 2px 3px black;
+        margin: auto;
+        text-align: center;
+    }
+</style>

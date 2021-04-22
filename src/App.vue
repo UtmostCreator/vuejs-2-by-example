@@ -2,10 +2,8 @@
     <div>
         <app-header></app-header>
         <hr>
-        <div class="servers" style="display: grid; grid: 1fr / 1fr 1fr">
-            <app-servers></app-servers>
-            <app-server-details></app-server-details>
-        </div>
+        <app-quote custom-text="Custom text 1"></app-quote>
+        <app-quote custom-text="Custom text 2"></app-quote>
         <hr>
         <app-footer></app-footer>
     </div>
@@ -14,13 +12,13 @@
 <script>
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
+import Quote from './components/Quote';
 
 export default {
     components: {
         'app-header': Header,
-        'app-servers': Servers,
-        'app-server-details': ServerDetails,
-        'app-footer': Footer
+        'app-footer': Footer,
+        'app-quote': Quote
     }
 }
 </script>
