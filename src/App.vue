@@ -2,8 +2,10 @@
     <div>
         <app-header></app-header>
         <hr>
-        <app-quote custom-text="Custom text 1"></app-quote>
-        <app-quote custom-text="Custom text 2"></app-quote>
+        <app-quote>
+            <h2>Custom text 1</h2>
+            <p>Custom description</p>
+        </app-quote>
         <hr>
         <app-footer></app-footer>
     </div>

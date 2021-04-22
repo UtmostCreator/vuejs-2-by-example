@@ -1,15 +1,11 @@
 <template>
     <div>
-        <q>{{ customText }}</q>
+        <q><slot></slot></q>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Quote",
-    props: {
-        customText: String,
-    }
 }
 </script>
 
@@ -19,5 +15,9 @@ export default {
         box-shadow: 1px 2px 2px 3px black;
         margin: auto;
         text-align: center;
+    }
+
+    h2 {
+        color: green;
     }
 </style>
