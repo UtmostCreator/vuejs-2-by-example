@@ -2,11 +2,22 @@
     <div>
         <app-header></app-header>
         <hr>
-        <app-quote>
-            <h2 slot="title">{{ quoteTitle }}</h2>
-            <p slot="extra-text">EXTRA content from parent</p>
-            <q>Custom description</q>
-        </app-quote>
+        <button @click="selectedComponent = 'appQuote'">Select Quote 1</button>
+        <button @click="selectedComponent = 'appAuthor'">Select Quote 1</button>
+        <button @click="selectedComponent = 'appNewQuote'">Select Quote 1</button>
+        <h4>{{selectedComponent}}</h4>
+        Dynamically loaded component (by its name):
+        <div v-if="selectedComponent" style="border: .1rem dotted darkgreen; padding: 1rem">
+
+            <component v-bind:is="selectedComponent">
+                Default component content!!!!!
+            </component>
+        </div>
+<!--        <app-quote>-->
+<!--            <h2 slot="title">{{ quoteTitle }}</h2>-->
+<!--            <p slot="extra-text">EXTRA content from parent</p>-->
+<!--            <q>Custom description</q>-->
+<!--        </app-quote>-->
         <hr>
         <app-footer></app-footer>
     </div>
@@ -16,17 +27,22 @@
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
 import Quote from './components/Quote';
+import Author from './components/Author';
+import newQuote from './components/newQuote';
 
 export default {
     data: function () {
         return {
-            quoteTitle: 'Some Specific Quote from App'
+            quoteTitle: 'Some Specific Quote from App',
+            selectedComponent: 'appQuote',
         }
     },
     components: {
         'app-header': Header,
         'app-footer': Footer,
-        'app-quote': Quote
+        appQuote: Quote,
+        appAuthor: Author,
+        appNewQuote: newQuote,
     }
 }
 </script>
