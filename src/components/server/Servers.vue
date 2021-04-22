@@ -1,12 +1,16 @@
 <template>
     <ul class="server-details" style="display:flex; flex-flow:column; background: #2c3e50; color:white;">
-        <li v-for="item in items">
-            ID: {{ item.id }} | Name: {{ item.name }}
-        </li>
+        <app-server
+            v-for="server in items"
+            :server="server"
+        >
+        </app-server>
     </ul>
 </template>
 
 <script>
+import Server from './Server';
+
 export default {
     name: "Servers",
     data: function() {
@@ -19,6 +23,9 @@ export default {
                 {id: 1241, name: 'Server 66', description: 'SOme random text of 1241'},
             ]
         }
+    },
+    components: {
+        appServer: Server
     }
 }
 </script>
