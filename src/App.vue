@@ -4,6 +4,7 @@
         <hr>
         <app-quote>
             <h2 slot="title">{{ quoteTitle }}</h2>
+            <p slot="extra-text">EXTRA content from parent</p>
             <q>Custom description</q>
         </app-quote>
         <hr>
