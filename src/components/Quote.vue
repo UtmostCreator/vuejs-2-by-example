@@ -1,6 +1,10 @@
 <template>
     <div>
-        <slot name="title"></slot>
+        <div>
+            <slot name="title"></slot>
+            <span><slot name="extra-text">DEFAULT SLOT Content</slot></span>
+        </div>
+
         <div>
             <slot></slot>
         </div>
