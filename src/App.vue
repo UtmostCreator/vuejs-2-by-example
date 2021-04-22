@@ -3,8 +3,8 @@
         <app-header></app-header>
         <hr>
         <app-quote>
-            <h2>{{ quoteTitle }}</h2>
-            <p>Custom description</p>
+            <h2 slot="title">{{ quoteTitle }}</h2>
+            <q slot="content">Custom description</q>
         </app-quote>
         <hr>
         <app-footer></app-footer>

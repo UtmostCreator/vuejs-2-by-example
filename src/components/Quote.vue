@@ -1,6 +1,9 @@
 <template>
     <div>
-        <q><slot></slot></q>
+        <slot name="title"></slot>
+        <div>
+            <slot name="content"></slot>
+        </div>
     </div>
 </template>
 
