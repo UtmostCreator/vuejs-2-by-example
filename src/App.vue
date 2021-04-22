@@ -3,7 +3,7 @@
         <app-header></app-header>
         <hr>
         <app-quote>
-            <h2>Custom text 1</h2>
+            <h2>{{ quoteTitle }}</h2>
             <p>Custom description</p>
         </app-quote>
         <hr>
@@ -17,6 +17,11 @@ import Footer from './components/shared/Footer';
 import Quote from './components/Quote';
 
 export default {
+    data: function () {
+        return {
+            quoteTitle: 'Some Specific Quote from App'
+        }
+    },
     components: {
         'app-header': Header,
         'app-footer': Footer,
