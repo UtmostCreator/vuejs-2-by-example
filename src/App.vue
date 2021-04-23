@@ -2,7 +2,9 @@
     <div>
         <app-header></app-header>
         <hr>
-
+        <app-blue><p>Content blue</p></app-blue>
+        <app-green><p>Content green</p></app-green>
+        <app-red><p>Content red</p></app-red>
         <hr>
         <app-footer></app-footer>
     </div>
@@ -11,11 +13,17 @@
 <script>
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
+import Blue from './components/Blue';
+import Green from './components/Green';
+import Red from './components/Red';
 
 export default {
     components: {
         'app-header': Header,
-        'app-footer': Footer
+        'app-footer': Footer,
+        appBlue: Blue,
+        appGreen: Green,
+        appRed: Red,
     }
 }
 </script>
