@@ -13,6 +13,9 @@ export default {
         return {
             counter: 0,
         };
+    },
+    destroyed() {
+        console.log('destroyed');
     }
 }
 </script>

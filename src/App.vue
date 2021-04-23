@@ -5,19 +5,21 @@
         <button @click="selectedComponent = 'appQuote'">COmp Quote</button>
         <button @click="selectedComponent = 'appAuthor'">Comp Author</button>
         <button @click="selectedComponent = 'appNewQuote'">COmp NewQuote (counter)</button>
-        <h4>{{selectedComponent}}</h4>
+        <h4>{{ selectedComponent }}</h4>
         Dynamically loaded component (by its name):
         <div v-if="selectedComponent" style="border: .1rem dotted darkgreen; padding: 1rem">
 
-            <component v-bind:is="selectedComponent">
-                Default component content!!!!!
-            </component>
+            <keep-alive>
+                <component v-bind:is="selectedComponent">
+                    Default component content!!!!!
+                </component>
+            </keep-alive>
         </div>
-<!--        <app-quote>-->
-<!--            <h2 slot="title">{{ quoteTitle }}</h2>-->
-<!--            <p slot="extra-text">EXTRA content from parent</p>-->
-<!--            <q>Custom description</q>-->
-<!--        </app-quote>-->
+        <!--        <app-quote>-->
+        <!--            <h2 slot="title">{{ quoteTitle }}</h2>-->
+        <!--            <p slot="extra-text">EXTRA content from parent</p>-->
+        <!--            <q>Custom description</q>-->
+        <!--        </app-quote>-->
         <hr>
         <app-footer></app-footer>
     </div>
