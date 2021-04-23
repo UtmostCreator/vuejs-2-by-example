@@ -2,9 +2,9 @@
     <div>
         <app-header></app-header>
         <hr>
-        <button @click="selectedComponent = 'appQuote'">Select Quote 1</button>
-        <button @click="selectedComponent = 'appAuthor'">Select Quote 1</button>
-        <button @click="selectedComponent = 'appNewQuote'">Select Quote 1</button>
+        <button @click="selectedComponent = 'appQuote'">COmp Quote</button>
+        <button @click="selectedComponent = 'appAuthor'">Comp Author</button>
+        <button @click="selectedComponent = 'appNewQuote'">COmp NewQuote (counter)</button>
         <h4>{{selectedComponent}}</h4>
         Dynamically loaded component (by its name):
         <div v-if="selectedComponent" style="border: .1rem dotted darkgreen; padding: 1rem">

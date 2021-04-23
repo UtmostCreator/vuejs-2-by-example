@@ -1,10 +1,19 @@
 <template>
-    <div>New Quote</div>
+    <div>
+
+        <div>New Quote</div>
+        <button @click="counter++">inc</button>
+        {{ counter }}
+    </div>
 </template>
 
 <script>
 export default {
-    name: "NewQuote"
+    data: function () {
+        return {
+            counter: 0,
+        };
+    }
 }
 </script>
 
