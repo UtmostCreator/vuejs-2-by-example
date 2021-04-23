@@ -5,10 +5,13 @@
         <button @click="activeComponent = 'appBlue'">Activate appBlue component</button>
         <button @click="activeComponent = 'appGreen'">Activate appGreen component</button>
         <button @click="activeComponent = 'appRed'">Activate appRed component</button>
-        <component :is="activeComponent"><p>{{activeComponent}} component is shown</p></component>
-<!--        <app-blue><p>Content blue</p></app-blue>-->
-<!--        <app-green><p>Content green</p></app-green>-->
-<!--        <app-red><p>Content red</p></app-red>-->
+
+        <keep-alive>
+            <component :is="activeComponent"><p>{{ activeComponent }} component is shown</p></component>
+        </keep-alive>
+        <!--        <app-blue><p>Content blue</p></app-blue>-->
+        <!--        <app-green><p>Content green</p></app-green>-->
+        <!--        <app-red><p>Content red</p></app-red>-->
         <hr>
         <app-footer></app-footer>
     </div>
