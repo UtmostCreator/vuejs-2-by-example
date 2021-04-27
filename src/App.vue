@@ -10,6 +10,8 @@
         <hr style="font-size: 2rem">
         <app-counter></app-counter>
         <app-new-counter></app-new-counter>
+        <input type="text" :value="value" @input="updateValue">
+        <p>{{value}}</p>
         <hr>
         <app-footer></app-footer>
     </div>
@@ -24,6 +26,16 @@ import Counter from './components/Counter';
 import NewCounter from './components/NewCounter';
 
 export default {
+    computed: {
+        value() {
+            return this.$store.getters.value;
+        }
+    },
+    methods: {
+      updateValue(event) {
+          this.$store.dispatch('updateValue', event.target.value)
+      }
+    },
     components: {
         'app-header': Header,
         'app-footer': Footer,

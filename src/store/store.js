@@ -6,13 +6,17 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: { // state name is not arbitrary
         counter: 0,
+        value: 0,
     },
     getters: {
         doubleCounter: state => {
             return state.counter * 2;
         },
         stringCounter: state => {
-            return state.counter + " Clicks"
+            return state.counter + " Clicks";
+        },
+        value: state => {
+            return state.value;
         }
     },
     mutations: {
@@ -23,6 +27,9 @@ export const store = new Vuex.Store({
         },
         dec: (state, by) => {
             state.counter -= by;
+        },
+        updateValue: (state, payload) => {
+            state.value = payload;
         }
     },
     // ONLY ACTIONS for asynchronous tasks
@@ -49,5 +56,8 @@ export const store = new Vuex.Store({
             }, payload.duration);
 
         },
+        updateValue({commit}, payload) {
+            commit('updateValue', payload);
+        }
     }
 });
