@@ -9,6 +9,7 @@
         <app-new-result></app-new-result>
         <hr style="font-size: 2rem">
         <app-counter></app-counter>
+        <app-new-counter></app-new-counter>
         <hr>
         <app-footer></app-footer>
     </div>
@@ -20,6 +21,7 @@ import Footer from './components/shared/Footer';
 import Result from './components/Result';
 import NewResult from './components/NewResult';
 import Counter from './components/Counter';
+import NewCounter from './components/NewCounter';
 
 export default {
     components: {
@@ -28,6 +30,7 @@ export default {
         'app-result': Result,
         'app-new-result': NewResult,
         'app-counter': Counter,
+        'app-new-counter': NewCounter,
     }
 }
 </script>

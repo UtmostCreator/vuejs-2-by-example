@@ -14,5 +14,13 @@ export const store = new Vuex.Store({
         stringCounter:state => {
             return state.counter + " Clicks"
         }
+    },
+    mutations: {
+        inc: state => {
+            state.counter++;
+        },
+        dec: state => {
+            state.counter--;
+        }
     }
 });
