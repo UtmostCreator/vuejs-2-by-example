@@ -1,84 +1,50 @@
 <template>
-    <div>
-        <app-header></app-header>
-        <hr>
-        <h1>Vuex</h1>
-        Res:
-        <app-result></app-result>
-        New Res:
-        <app-new-result></app-new-result>
-        <hr style="font-size: 2rem">
-<!--        <app-counter></app-counter>-->
-        <app-new-counter></app-new-counter>
-        <input type="text" v-model="value">
-        <p>{{value}}</p>
-        <hr>
-        <app-footer></app-footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <h1>Vuex</h1>
+                <app-result></app-result>
+                <app-new-result></app-new-result>
+                <hr>
+                <app-counter></app-counter>
+                <app-new-counter></app-new-counter>
+                <hr>
+                <input type="text" v-model="value">
+                <p>{{ value }}</p>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-import Header from './components/shared/Header';
-import Footer from './components/shared/Footer';
-import Result from './components/Result';
-import NewResult from './components/NewResult';
-import Counter from './components/Counter';
-import NewCounter from './components/NewCounter';
+    import Counter from './components/Counter.vue';
+    import NewCounter from './components/NewCounter.vue';
+    import Result from './components/Result.vue';
+    import NewResult from './components/NewResult.vue';
+    import * as types from './store/types';
 
-export default {
-    computed: {
-        // using this block of code to get and set the state value
-        value: {
-            get() {
-                return this.$store.getters.value;
-            },
-            set(value) {
-                this.$store.dispatch('updateValue', value);
-            }
+    export default {
+        computed: {
+          value: {
+              get() {
+                  return this.$store.getters[types.VALUE];
+              },
+              set(value) {
+                  this.$store.dispatch(types.UPDATE_VALUE, value);
+              }
+          }
+        },
+        methods: {
+          updateValue(event) {
+              this.$store.dispatch(types.UPDATE_VALUE, event.target.value);
+          }
+        },
+        components: {
+            appCounter: Counter,
+            appNewCounter: NewCounter,
+            appResult: Result,
+            appNewResult: NewResult,
         }
-    },
-    methods: {
-      updateValue(event) {
-          this.$store.dispatch('updateValue', event.target.value)
-      }
-    },
-    components: {
-        'app-header': Header,
-        'app-footer': Footer,
-        'app-result': Result,
-        'app-new-result': NewResult,
-        'app-counter': Counter,
-        'app-new-counter': NewCounter,
     }
-}
 </script>
 
-
-<style lang="scss">
-#app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
-
-h1, h2 {
-    font-weight: normal;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-a {
-    color: #42b983;
-}
-</style>

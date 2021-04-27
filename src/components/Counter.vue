@@ -1,22 +1,20 @@
 <template>
     <div>
-        <button @click="inc">+1</button>
-        <button @click="dec">-1</button>
+        <button class="btn btn-primary" @click="increment(100)">Increment</button>
+        <button class="btn btn-primary" @click="decrement(50)">Decrement</button>
     </div>
 </template>
 
 <script>
-export default {
-methods: {
-    inc() {
-        // console.log(this.$store.state.counter);
-        this.$store.state.counter++;
-    },
-    dec() {
-        this.$store.state.counter--;
-    }
-}}
-</script>
+    import {mapActions} from 'vuex';
+    import * as types from '../store/types';
 
-<style scoped>
-</style>
+    export default {
+        methods: {
+            ...mapActions({
+                increment: types.COUNTER_INCREMENT,
+                decrement: types.COUNTER_DECREMENT
+            })
+        }
+    }
+</script>
