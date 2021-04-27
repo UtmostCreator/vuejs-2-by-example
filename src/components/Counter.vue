@@ -9,10 +9,10 @@
 export default {
 methods: {
     inc() {
-        this.$emit('update', 1);
+        this.$store.state.counter++;
     },
     dec() {
-        this.$emit('update', -1);
+        this.$store.state.counter--;
     }
 }}
 </script>
