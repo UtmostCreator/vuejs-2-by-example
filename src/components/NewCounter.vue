@@ -6,15 +6,16 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex';
+
 export default {
-methods: {
-    inc() {
-        this.$store.commit('inc');
-    },
-    dec() {
-        this.$store.commit('dec');
-    }
-}}
+    // mapMutations([]); // and just specify the names form the store
+    // or  mapMutations({}) or name mutations as you wish.
+    methods: mapMutations([
+        'dec',
+        'inc'
+    ])
+}
 </script>
 
 <style scoped>
