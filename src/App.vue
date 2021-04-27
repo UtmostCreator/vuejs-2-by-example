@@ -3,7 +3,10 @@
         <app-header></app-header>
         <hr>
         <h1>Vuex</h1>
+        Res:
         <app-result></app-result>
+        New Res:
+        <app-new-result></app-new-result>
         <hr style="font-size: 2rem">
         <app-counter></app-counter>
         <hr>
@@ -15,6 +18,7 @@
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
 import Result from './components/Result';
+import NewResult from './components/NewResult';
 import Counter from './components/Counter';
 
 export default {
@@ -22,7 +26,8 @@ export default {
         'app-header': Header,
         'app-footer': Footer,
         'app-result': Result,
-        'app-counter': Counter
+        'app-new-result': NewResult,
+        'app-counter': Counter,
     }
 }
 </script>
