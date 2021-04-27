@@ -8,7 +8,7 @@
         New Res:
         <app-new-result></app-new-result>
         <hr style="font-size: 2rem">
-        <app-counter></app-counter>
+<!--        <app-counter></app-counter>-->
         <app-new-counter></app-new-counter>
         <input type="text" v-model="value">
         <p>{{value}}</p>
