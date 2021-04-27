@@ -1,16 +1,16 @@
 <template>
     <div>
-        Counter result is {{counter}}
+        Counter result is {{customNameGetterName}}
     </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
+
 export default {
-    computed: {
-        counter() {
-            return this.$store.getters.doubleCounter;
-        }
-    }
+    computed: mapGetters({
+        "customNameGetterName": "doubleCounter"
+    })
 }
 </script>
 
