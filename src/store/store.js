@@ -11,16 +11,43 @@ export const store = new Vuex.Store({
         doubleCounter: state => {
             return state.counter * 2;
         },
-        stringCounter:state => {
+        stringCounter: state => {
             return state.counter + " Clicks"
         }
     },
     mutations: {
-        inc: state => {
-            state.counter++;
+        // with one param
+        // inc: (state, payload) => {
+        inc: (state, by) => {
+            state.counter += by;
         },
-        dec: state => {
-            state.counter--;
+        dec: (state, by) => {
+            state.counter -= by;
         }
+    },
+    // ONLY ACTIONS for asynchronous tasks
+    actions: {
+        // the inc method with a param see NewCounter.vue LINE 20
+        inc: (context, payload) => {
+        // inc: context => {
+            context.commit('inc', payload)
+        },
+        // destruct the context object to commit object only
+        dec: ({commit}, payload) => {
+            commit('dec', payload);
+        },
+        asynchronousInc: ({commit}, payload) => {
+            setTimeout(() => {
+                // this will call the mutations inc method
+                commit('inc', payload.by);
+            }, payload.duration);
+        },
+        // destruct the context object to commit object only
+        asynchronousDec: ({commit}, payload) => {
+            setTimeout(() => {
+                commit('dec', payload.by);
+            }, payload.duration);
+
+        },
     }
 });
