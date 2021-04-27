@@ -2,7 +2,10 @@
     <div>
         <app-header></app-header>
         <hr>
-
+        <h1>Vuex</h1>
+        <app-result :counter="counter"></app-result>
+        <hr style="font-size: 2rem">
+        <app-counter @update="counter += $event"></app-counter>
         <hr>
         <app-footer></app-footer>
     </div>
@@ -11,11 +14,20 @@
 <script>
 import Header from './components/shared/Header';
 import Footer from './components/shared/Footer';
+import Result from './components/Result';
+import Counter from './components/Counter';
 
 export default {
+    data: function () {
+        return {
+            counter: 0,
+        }
+    },
     components: {
         'app-header': Header,
-        'app-footer': Footer
+        'app-footer': Footer,
+        'app-result': Result,
+        'app-counter': Counter
     }
 }
 </script>
