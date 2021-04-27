@@ -9,6 +9,7 @@
 export default {
 methods: {
     inc() {
+        // console.log(this.$store.state.counter);
         this.$store.state.counter++;
     },
     dec() {
