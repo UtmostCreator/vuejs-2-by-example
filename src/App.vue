@@ -1,28 +1,21 @@
 <template>
     <div>
-        <app-header></app-header>
-        <hr>
         <h1>Vuex</h1>
-        <app-result></app-result>
-        <hr style="font-size: 2rem">
-        <app-counter></app-counter>
-        <hr>
-        <app-footer></app-footer>
+        <app-posts></app-posts>
     </div>
 </template>
 
 <script>
-import Header from './components/shared/Header';
-import Footer from './components/shared/Footer';
-import Result from './components/Result';
-import Counter from './components/Counter';
+import Posts from './components/Posts';
 
 export default {
+    data() {
+        return {
+            title: 'test',
+        };
+    },
     components: {
-        'app-header': Header,
-        'app-footer': Footer,
-        'app-result': Result,
-        'app-counter': Counter
+        'app-posts': Posts,
     }
 }
 </script>
