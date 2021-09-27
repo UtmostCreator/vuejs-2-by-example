@@ -11,7 +11,7 @@ import * as types from '../store/types';
 export default {
     computed: {
         ...mapGetters({
-            counter:  types.COUNTER_DOUBLE_VALUE,
+            counter:  types.G_COUNTER_DOUBLE_VALUE,
         }),
         test: function () {
             return 'test';

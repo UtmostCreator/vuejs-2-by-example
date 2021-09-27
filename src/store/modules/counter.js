@@ -6,25 +6,25 @@ const state = {
 };
 
 const getters = {
-    [types.COUNTER_DOUBLE_VALUE]: state => {
+    [types.G_COUNTER_DOUBLE_VALUE]: state => {
         return state.counter * 2;
     },
-    [types.COUNTER_CLICK_STR]: state => {
+    [types.G_COUNTER_CLICK_STR]: state => {
         return state.counter === 0 || Math.abs(state.counter) > 1 ? `${state.counter} clicks` : state.counter + ' click';
     },
 };
 
 const mutations = {
-    inc: (state) => {
+    [types.M_COUNTER_INC]: (state) => {
         state.counter++;
     },
-    incWithParam: (state, payload) => {
+    [types.M_COUNTER_INC_WITH_PARAM]: (state, payload) => {
         state.counter += payload;
     },
-    dec: state => {
+    [types.M_COUNTER_DEC]: state => {
         state.counter--;
     },
-    decWithParam: state => {
+    [types.M_COUNTER_DEC_WITH_PARAM]: state => {
         state.counter--;
     },
 };
@@ -34,32 +34,32 @@ const actions = {
     //     context.commit('inc');
     // },
     // using destructure
-    inc: ({commit}) => {
-        commit('inc');
-    },
-    incWithParam: ({commit}, payload) => {
-        commit('incWithParam', payload);
-    },
-    dec: ({commit}) => {
-        commit('dec');
-    },
-    decWithParam: ({commit}, payload) => {
-        commit('decWithParam', payload);
-    },
-    asyncInc: ({commit}) => {
+    // inc: ({commit}) => {
+    //     commit(types.M_COUNTER_INC);
+    // },
+    // incWithParam: ({commit}, payload) => {
+    //     commit(types.M_COUNTER_INC_WITH_PARAM, payload);
+    // },
+    // dec: ({commit}) => {
+    //     commit(types.M_COUNTER_DEC);
+    // },
+    // decWithParam: ({commit}, payload) => {
+    //     commit(types.M_COUNTER_DEC_WITH_PARAM, payload);
+    // },
+    [types.A_COUNTER_INC_ASYNC]: ({commit}) => {
         setTimeout(function () {
-            commit('inc');
+            commit(types.M_COUNTER_INC);
         }, 1000);
     },
-    asyncIncWithParams: ({commit, state}, params) => {
+    [types.A_COUNTER_INC_WITH_PARAM_ASYNC]: ({commit, state}, params) => {
         if (state.timer === null) {
             state.timer = setTimeout(function () {
-                commit('incWithParam', params.payload);
+                commit(types.M_COUNTER_INC_WITH_PARAM, params.payload);
                 state.timer = null;
             }, params.delay);
         }
     },
-    asyncDec: ({commit}) => {
+    [types.A_COUNTER_DEC_ASYNC]: ({commit}) => {
         setTimeout(function () {
             commit('dec');
         }, 1000);

@@ -13,8 +13,8 @@ import * as types from '../store/types';
 export default {
     computed: {
         ...mapGetters({
-            doubleCounter:  types.COUNTER_DOUBLE_VALUE,
-            stringCounter:  types.COUNTER_CLICK_STR,
+            doubleCounter:  types.G_COUNTER_DOUBLE_VALUE,
+            stringCounter:  types.G_COUNTER_CLICK_STR,
         }),
         test: function () {
             return 'test';

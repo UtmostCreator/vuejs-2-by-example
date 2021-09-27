@@ -10,7 +10,10 @@ import * as types from '../store/types';
 import {mapMutations} from "vuex";
 export default {
 methods: {
-    ...mapMutations(['inc', 'dec']),
+    ...mapMutations({
+        inc: types.M_COUNTER_INC,
+        dec: types.M_COUNTER_DEC,
+    }),
 }
     // inc() {
     //     this.$store.state.counter++;

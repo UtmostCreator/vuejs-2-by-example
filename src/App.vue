@@ -15,7 +15,6 @@
         <div>
             <p> Value: {{ value }}</p>
             <input type="text" v-model="value">
-
         </div>
     </div>
 </template>
@@ -27,21 +26,22 @@ import Result from './components/Result';
 import AnotherResult from './components/AnotherResult';
 import Counter from './components/Counter';
 import AnotherCounter from './components/AnotherCounter';
+import * as types from './store/types';
 
 export default {
     computed: {
         value: {
             get() {
-                return this.$store.getters.value;
+                return this.$store.getters[types.G_VALUE];
             },
             set(value) {
-                this.$store.dispatch('asyncUpdateValue', value);
+                this.$store.dispatch(types.A_VALUE_UPDATE_ASYNC, value);
             }
         }
     },
     methods: {
       updateValue(event) {
-          this.$store.dispatch('asyncUpdateValue', +event.target.value);
+          this.$store.dispatch(types.A_VALUE_UPDATE_ASYNC, event.target.value);
       }
     },
     components: {
