@@ -6,15 +6,19 @@
 </template>
 
 <script>
+import * as types from '../store/types';
+import {mapMutations} from "vuex";
 export default {
 methods: {
-    inc() {
-        this.$store.state.counter++;
-    },
-    dec() {
-        this.$store.state.counter--;
-    }
-}}
+    ...mapMutations(['inc', 'dec']),
+}
+    // inc() {
+    //     this.$store.state.counter++;
+    // },
+    // dec() {
+    //     this.$store.state.counter--;
+    // }
+}
 </script>
 
 <style scoped>
