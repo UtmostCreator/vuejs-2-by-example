@@ -14,7 +14,7 @@
 
         <div>
             <p> Value: {{ value }}</p>
-            <input type="text" :value="value" @input="updateValue">
+            <input type="text" v-model="value">
 
         </div>
     </div>
@@ -30,8 +30,13 @@ import AnotherCounter from './components/AnotherCounter';
 
 export default {
     computed: {
-        value() {
-            return this.$store.getters.value;
+        value: {
+            get() {
+                return this.$store.getters.value;
+            },
+            set(value) {
+                this.$store.dispatch('asyncUpdateValue', value);
+            }
         }
     },
     methods: {

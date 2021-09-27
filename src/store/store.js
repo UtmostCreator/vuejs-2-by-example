@@ -77,7 +77,7 @@ export const store = new Vuex.Store({
             state.timer = setTimeout(function () {
                 commit('updateValue', payload);
                 state.timer = null;
-            }, 100);
+            }, 250);
         }
     }
 });
